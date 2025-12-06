@@ -1,19 +1,30 @@
-spring:
 server:
   port: 8082
 
-
+spring:
   application:
     name: SERVICE-CAR
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/carservicedb?createDatabaseIfNotExist=true
-    username: "root"
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:carservicedb
+    username: sa
     password: ""
+  h2:
+    console:
+      enabled: true
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        register: true
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+    loadbalancer:
+      enabled: false
 
 management:
   endpoints:
@@ -23,4 +34,5 @@ management:
   endpoint:
     health:
       show-details: always
+
 

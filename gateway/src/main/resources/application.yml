@@ -4,6 +4,19 @@ server:
 spring:
   application:
     name: Gateway
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        register: true
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    loadbalancer:
+      enabled: false
 
 management:
   endpoints:
