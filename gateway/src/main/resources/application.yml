@@ -4,10 +4,12 @@ server:
 spring:
   application:
     name: Gateway
-  cloud:
-    discovery:
-      enabled: true
 
-eureka:
-  instance:
-    hostname: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always

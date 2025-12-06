@@ -1,7 +1,8 @@
+spring:
 server:
   port: 8082
 
-spring:
+
   application:
     name: SERVICE-CAR
   datasource:
@@ -13,4 +14,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
 
