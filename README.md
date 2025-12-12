@@ -8,7 +8,6 @@ Accéder à l'interface de Consul : http://localhost:8500/
 
 Vous devriez voir :
 - Services enregistrés : `SERVICE-CAR`, `SERVICE-CLIENT`, `Gateway`
-- État de santé : Tous en `passing`
 
 <img width="1919" height="772" alt="Services Registration Result" src="https://github.com/user-attachments/assets/282e0244-0d36-49cf-addb-5346ead24b6e" />
 
